@@ -26,5 +26,7 @@
 (custom-set-variables '(neo-theme (quote icons)))
 (custom-set-faces)
 
+;;java-mode
+(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)))
 
 
