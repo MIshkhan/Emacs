@@ -27,6 +27,6 @@
 (custom-set-faces)
 
 ;;java-mode
-(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)))
+(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)(hs-minor-mode 1)))
 
 
