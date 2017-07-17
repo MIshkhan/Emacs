@@ -18,15 +18,27 @@
 (global-auto-complete-mode t)
 
 ;;neo-tree
-(add-to-list 'load-path "/home/ishkhan/Programs/neotree")
+(add-to-list 'load-path "/home/ishkhan/.emacs.d/elpa/neotree-20170522.758")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
 ;;all-the-icons
-(custom-set-variables '(neo-theme (quote icons)))
+(custom-set-variables
+ '(inhibit-startup-screen t)
+ '(neo-theme (quote icons)))
 (custom-set-faces)
 
 ;;java-mode
-(add-hook 'java-mode-hook (lambda () (setq c-basic-offset 2)(hs-minor-mode 1)))
+(add-hook 'java-mode-hook (lambda ()
+			    (hs-minor-mode 1)
+			    (local-set-key (kbd "<f1>") 'hs-toggle-hiding)
+			    (local-set-key (kbd "<f2>") 'hs-hide-all)
+			    (local-set-key (kbd "<f3>") 'hs-show-all)
+			    (setq c-basic-offset 2)))
 
+;;yes-no alias
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;;subword-mode
+(setq subword-mode 1)
 
