@@ -23,10 +23,7 @@
 (global-set-key [f8] 'neotree-toggle)
 
 ;;all-the-icons
-(custom-set-variables
- '(inhibit-startup-screen t)
- '(neo-theme (quote icons)))
-(custom-set-faces)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 ;;java-mode
 (add-hook 'java-mode-hook (lambda ()
