@@ -1,4 +1,3 @@
-
 ;;package install
 (require 'package)
 	(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -23,7 +22,13 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
-;;java-mode
+;;all-the-icons		
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(custom-set-variables
+ '(inhibit-startup-screen t))
+(custom-set-faces)
+
+;;java-mode and hs-minore mode
 (add-hook 'java-mode-hook (lambda ()
 			    (hs-minor-mode 1)
 			    (local-set-key (kbd "<f1>") 'hs-toggle-hiding)
@@ -37,20 +42,10 @@
 ;;subword-mode
 (setq subword-mode 1)
 
-;;all-the-items
-(custom-set-variables
- '(inhibit-startup-screen t)
- '(package-selected-packages
-   (quote
-    (highlight-symbol neotree monokai-theme auto-complete all-the-icons))))
-(custom-set-faces )
-
 ;; highlight-sysmbol configurations
 (global-set-key [f4] 'highlight-symbol-at-point)
 (global-set-key [(control f4)] 'highlight-symbol-next)
 (global-set-key [(shift f4)] 'highlight-symbol-prev)
-(lambda (event)
-  (interactive "e")
-  (save-excursion
-    (goto-char (posn-point (event-start event)))
-    (highlight-symbol-at-point))))
+(lambda (event) (interactive "e") (save-excursion (goto-char (posn-point (event-start event)))(highlight-symbol-at-point)))
+
+
