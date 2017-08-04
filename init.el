@@ -11,11 +11,12 @@
 (defalias 'yes-or-no-p 'y-or-n-p)                                                              ;;yes-no alias
 
 ;;modes
-(global-linum-mode t)               ;;lines number
-(delete-selection-mode 1)           ;;delete-selection
-(global-auto-complete-mode t)       ;;auto-complete
-(setq subword-mode 1)               ;;subword
-(setq-default indent-tabs-mode nil) ;; tabs
+(global-linum-mode t)                      ;;lines number
+(delete-selection-mode 1)                  ;;delete-selection
+(global-auto-complete-mode t)              ;;auto-complete
+(setq subword-mode 1)                      ;;subword
+(setq-default indent-tabs-mode nil)        ;;tabs
+(add-hook 'prog-mode-hook #'hs-minor-mode) ;;hide-show
 
 (setq make-backup-files nil)        ;; stop creating backup~ files
 (setq auto-save-default nil)        ;; stop creating #autosave# files
@@ -34,7 +35,6 @@
 (global-set-key [f2] 'highlight-symbol-prev)           ;;highlight-prev-sysmbol
 (global-set-key [f3] 'highlight-symbol-at-point)       ;;highlight-all-sysmbols 
 (global-set-key [f4] 'highlight-symbol-next)           ;;highlight-next-sysmbol
-
 (global-set-key [f5] (lambda() (interactive) (load-file "~/.emacs.d/init.el"))) ;;loading init.el
 (global-set-key [f6] (lambda() (interactive) (find-file "~/.emacs.d/init.el"))) ;;opening init.el
 (global-set-key [f7] 'find-file)      ;;finding file
