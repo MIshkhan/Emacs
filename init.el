@@ -21,6 +21,8 @@
 (setq make-backup-files nil)        ;; stop creating backup~ files
 (setq auto-save-default nil)        ;; stop creating #autosave# files
 
+(setq c-basic-offset 2) ;;offset is 2 space
+
 ;;all-the-icons		
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (custom-set-variables
