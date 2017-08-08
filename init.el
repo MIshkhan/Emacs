@@ -14,12 +14,13 @@
 (global-linum-mode t)                      ;;lines number
 (delete-selection-mode 1)                  ;;delete-selection
 (global-auto-complete-mode t)              ;;auto-complete
-(setq subword-mode 1)                      ;;subword
+(global-syntax-subword-mode 1)             ;;syntax-subword
+
 (setq-default indent-tabs-mode nil)        ;;tabs
 (add-hook 'prog-mode-hook #'hs-minor-mode) ;;hide-show
 
-(setq make-backup-files nil)        ;; stop creating backup~ files
-(setq auto-save-default nil)        ;; stop creating #autosave# files
+(setq make-backup-files nil) ;;stop creating backup~ files
+(setq auto-save-default nil) ;;stop creating #autosave# files
 
 (setq c-basic-offset 2) ;;offset is 2 space
 
@@ -29,8 +30,9 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (json-mode scala-mode php-mode neotree monokai-theme highlight-symbol auto-complete all-the-icons))))
-(custom-set-faces)
+    (syntax-subword json-mode scala-mode php-mode neotree monokai-theme highlight-symbol auto-complete all-the-icons))))
+(custom-set-faces
+ )
 
 ;;custom-set-keys
 (global-set-key [f1] 'hs-toggle-hiding)                ;;hide-show
