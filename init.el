@@ -29,24 +29,33 @@
 ;;all-the-icons		
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (diff-hl restclient irony syntax-subword json-mode scala-mode php-mode neotree monokai-theme highlight-symbol auto-complete all-the-icons))))
+    (find-file-in-project diff-hl restclient irony syntax-subword json-mode scala-mode php-mode neotree monokai-theme highlight-symbol auto-complete all-the-icons))))
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;;custom-set-keys
-(global-set-key [f1] 'hs-toggle-hiding)                                         ;;hide-show
-(global-set-key [f2] 'highlight-symbol-prev)                                    ;;highlight-prev-sysmbol
-(global-set-key [f3] 'highlight-symbol-at-point)                                ;;highlight-all-sysmbols 
-(global-set-key [f4] 'highlight-symbol-next)                                    ;;highlight-next-sysmbol
-(global-set-key [f5] (lambda() (interactive) (load-file "~/.emacs.d/init.el"))) ;;loading init.el
-(global-set-key [f6] (lambda() (interactive) (find-file "~/.emacs.d/init.el"))) ;;opening init.el
-(global-set-key [f7] 'find-file)                                                ;;finding file
-(global-set-key [f8] 'neotree-toggle)                                           ;;neo-tree
-
-
+(global-set-key [f1]  'hs-toggle-hiding)                                         ;;hide-show
+(global-set-key [f2]  'highlight-symbol-prev)                                    ;;highlight-prev-sysmbol
+(global-set-key [f3]  'highlight-symbol-at-point)                                ;;highlight-all-sysmbols 
+(global-set-key [f4]  'highlight-symbol-next)                                    ;;highlight-next-sysmbol
+(global-set-key [f5]  (lambda() (interactive) (load-file "~/.emacs.d/init.el"))) ;;loading init.el
+(global-set-key [f6]  (lambda() (interactive) (find-file "~/.emacs.d/init.el"))) ;;opening init.el
+(global-set-key [f7]  'find-file)                                                ;;finding file
+(global-set-key [f8]  'neotree-toggle)                                           ;;neo-tree
+(global-set-key [f9]  'find-file-in-project)                                     ;;finding file in project
+(global-set-key [f10] 'find-file-in-project-at-point)                            ;;finding file in project at point/by-selected 
 
 ;; Required packages
 ;; diff-hl  (18 -> 19)
+;; find-file-in-project (56)
